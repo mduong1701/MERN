@@ -1,0 +1,38 @@
+.header {
+    background-color: #6aa84f;
+    height: 100px;
+    width: 95%;
+    margin: 20px;
+}
+
+.navi {
+    background-color: #6fa8dc;
+    height: 600px;
+    width: 200px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.main {
+    background-color: #e06666;
+    height: 600px;
+    width: 710px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.sub {
+    background-color: #ffd966;
+    height: 600px;
+    width: 200px;
+    margin: 20px;
+    display: inline-block;
+}
+
+.adv {
+    background-color: #b4a7d6;
+    height: 600px;
+    width: 200px;
+    margin: 20px;
+    display: inline-block;
+}
