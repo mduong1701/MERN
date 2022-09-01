@@ -8,24 +8,15 @@ const UserForm = (props) => {
     const [password, setPassword] = useState("");
     const [confirm, setConfirmPassword] = useState("");
 
-    const createUser = (e) => {
-        e.preventDefault();
-        const newUser = { firstName, lastName, email, password, confirm };
-        console.log("Welcome", newUser);
-        return (
-            <div>
-                <p>First Name: {newUser.firstName}</p>
-                <p>Last Name: {newUser.lastName}</p>
-                <p>Email: {newUser.email}</p>
-                <p>Password: {newUser.password}</p>
-                <p>Confirm Password: {newUser.confirm}</p>
-            </div>
-        )
-    };
+    // const createUser = (e) => {
+    //     e.preventDefault();
+    //     const newUser = { firstName, lastName, email, password, confirm };
+    //     console.log("Welcome", newUser);
+    // };
 
     return (
         <div>
-            <form onSubmit={createUser}>
+            <form>
                 <div>
                     <label>First Name: </label>
                     <input type="text" onChange={(e) => setFirstName(e.target.value)} />
@@ -46,8 +37,15 @@ const UserForm = (props) => {
                     <label>Confirm Password: </label>
                     <input type="password" onChange={(e) => setConfirmPassword(e.target.value)} />
                 </div>
-                <input type="submit" value="Create User" />
             </form>
+            <div>
+                <h2>Your Form Data</h2>
+                <p>First Name: {firstName}</p>
+                <p>Last Name: {lastName}</p>
+                <p>Email: {email}</p>
+                <p>Password: {password}</p>
+                <p>Confirm password: {confirm}</p>
+            </div>
             
         </div>
     );
