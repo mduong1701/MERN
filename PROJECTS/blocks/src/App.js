@@ -1,22 +1,23 @@
 import React from 'react';
-import './App.css';
+import mystyles from './Components/myStyle.module.css';
 import Header from './Components/Header';
 import Navigation from './Components/Navigation';
 import Main from './Components/Main';
-
+import SubContents from './Components/SubContents';
+import Advertisement from './Components/Advertisement';
 
 
 function App() {
   return (
-    <div className="app">
+    <div className={mystyles.app}>
       <Header />
       <Navigation />
-      <Main>
-      </Main>
+      <Main></Main>
     </div>
   );
 }
 
 export default App;
+
 
 

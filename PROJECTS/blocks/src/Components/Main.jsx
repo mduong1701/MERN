@@ -7,8 +7,16 @@ class Main extends React.Component {
     render() {
         return (
             <div className={mystyles.main}>
-                <SubContents />
-                <Advertisement />
+                <div className={mystyles.bottom}>
+                    <div className={mystyles.threeSub}>
+                        <SubContents />
+                        <SubContents />
+                        <SubContents />
+                    </div>
+                    <div>
+                        <Advertisement />
+                    </div>
+                </div>
             </div>
 
         );

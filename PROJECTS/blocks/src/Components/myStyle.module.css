@@ -1,16 +1,26 @@
+.app {
+    background-color: #dddddd;
+    width: 1000px;
+    height: 800px;
+    margin: 20px 20px;
+    border: 2px solid black;
+}
+
 .header {
     background-color: #6aa84f;
     height: 100px;
-    width: 95%;
-    margin: 20px;
+    width: 96%;
+    margin: 20px 20px;
+    border: 2px solid black;
 }
 
 .navi {
     background-color: #6fa8dc;
     height: 600px;
     width: 200px;
-    margin: 20px;
+    margin: 20px ;
     display: inline-block;
+    border: 2px solid black;
 }
 
 .main {
@@ -19,20 +29,32 @@
     width: 710px;
     margin: 20px;
     display: inline-block;
+    border: 2px solid black;
 }
 
 .sub {
     background-color: #ffd966;
     height: 600px;
-    width: 170px;
+    width: 200px;
     margin: 20px;
-    display: inline-block;
+    border: 2px solid black;
 }
 
 .adv {
     background-color: #b4a7d6;
-    height: 600px;
-    width: 200px;
-    margin: 20px;
-    display: inline-block;
+    height: 200px;
+    width: 600px;
+    border: 2px solid black;
+}
+
+.threeSub {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 500px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
 }
