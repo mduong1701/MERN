@@ -6,15 +6,38 @@ import AddItem from './components/AddItem';
 function App() {
   const [toDoList, setToDoList] = useState(
     [
-      "Do laundry",
-      "Wash dishes",
-      "Learn React",
-      "Do exercise",
-      "Water plants",
+      {
+        name: "Do laundry",
+        checked: false,
+      }, 
+
+      {
+        name: "Wash dishes",
+        checked: false,
+      },
+      
     ])
 
   const addItem = (newItem) => {
-    setToDoList([...toDoList, newItem])
+    const newItemObject = {
+      name: newItem,
+      checked: false,
+    }
+    setToDoList([...toDoList, newItemObject])
+  }
+
+  const isChecked = (n) => {
+    setToDoList(toDoList.map((task) => 
+      task.name === n 
+      ? {...task, checked: !task.checked}
+      : task
+    ))
+  }
+
+  const deleteItem = (n) => {
+    setToDoList(toDoList.filter(
+      (task) => task.name !== n
+    ))
   }
 
   return (
@@ -22,7 +45,13 @@ function App() {
       <AddItem addItem={addItem}/>
       <fieldset>
         <legend>List</legend>
-        {toDoList.map((item, idx) => { return <Item item={item} key={idx} /> })}
+        {toDoList.map((item, idx) => { 
+          return <Item 
+          item={item} 
+          key={idx} 
+          isChecked={isChecked} 
+          deleteItem={deleteItem}
+          /> })}
       </fieldset>
     </div>
   );
