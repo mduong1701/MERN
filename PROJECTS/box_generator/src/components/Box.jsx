@@ -1,12 +1,14 @@
 import React from 'react'
 
 const Box = (props) => {
+    const style = {
+        backgroundColor: props.box.color,
+        height: props.box.height,
+        width: props.box.width
+    }
+
     return (
-        <div style={{
-            backgroundColor: props.el,
-            height: 100,
-            width: 100
-        }}>
+        <div style={style}>
         </div>
     )
 }

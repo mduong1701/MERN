@@ -7,7 +7,12 @@ import FormBox from './components/FormBox';
 function App() {
 
   // Create state variable for this component
-  const [boxes, setBoxes] = useState(['red']);
+  const red = {
+    color: "red",
+    height: "100px",
+    width: "100px"
+  }
+  const [boxes, setBoxes] = useState([red]);
   const addBox = (newBox) => {
     setBoxes([...boxes, newBox])
   }
@@ -19,8 +24,8 @@ function App() {
       {/* ============================ */}
       <div className="Boxes">
       {
-        boxes.map((el, i) => {
-          return <Box el={el} key={i}/>
+        boxes.map((box, i) => {
+          return <Box box={box} key={i}/>
         })
       }
       </div>
