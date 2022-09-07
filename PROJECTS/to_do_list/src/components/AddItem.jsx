@@ -7,15 +7,17 @@ const AddItem = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
         props.addItem(input);
-        event.target.reset();
+        // event.target.reset();
+        setInput("")
     }
     return (
         <fieldset>
             <legend>Add a new task</legend>
 {/* Call submitHandler function when the user input is submitted */}
             <form onSubmit = {submitHandler}>
-                <input onChange={
-                    (e) => {
+                <input 
+                    value = {input}
+                    onChange={ (e) => {
 //  Save the user input into the variable input
                         setInput(e.target.value)
                     }
