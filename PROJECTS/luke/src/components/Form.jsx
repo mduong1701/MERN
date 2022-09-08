@@ -20,6 +20,7 @@ const Form = (props) => {
 //=========================================================
     return (
         <form onSubmit={submitHandler}>
+            <p>You choice is {choice}</p>
             <label>Search for</label>
             {/* selection input with 2 options: people, planet */}
             <select
@@ -27,6 +28,7 @@ const Form = (props) => {
                 onChange={ (event) => {
                     setChoice(event.target.value)}
                     }>
+                <option value=""></option>
                 <option value="people">people</option>
                 <option value="planets">planets</option>
             </select>
