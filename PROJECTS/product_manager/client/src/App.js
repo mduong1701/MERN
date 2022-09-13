@@ -1,35 +1,35 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Pet from './components/Pet';
+import Product from './components/Product';
 import DisplayOne from './components/DisplayOne';
 import Form from './components/Form';
 
 function App() {
 
-  const [allPets, setAllPets] = useState([])
+  const [allProducts, setAllProducts] = useState([])
   const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
     axios.get("http://localhost:8000/api/pets")
       .then(res => {
         console.log(res.data);
-        setAllPets(res.data)
+        setAllProducts(res.data)
       })
       .catch(err => console.log(err))
   }, [isReady])
 
   return (
     <div className="App">
-      <h1>PETS</h1>
-      <p>
+      <h1>PRODUCTS</h1>
+      {/* <p>
         {JSON.stringify(isReady)}
-      </p>
+      </p> */}
 
       <Form isReady={isReady} setIsReady={setIsReady} />
       {
-        allPets.map((pet) => {
-          return <Pet key={pet._id} pet={pet} />
+        allProducts.map((product) => {
+          return <Product key={product._id} product={product} />
         })
       }
       {/* <DisplayOne/> */}

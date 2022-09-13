@@ -2,25 +2,26 @@
 const mongoose = require("mongoose");
 
 // the schema - the rules that the entries in the DB must follow
-const PetSchema = new mongoose.Schema({
-    name: {
+const ProductSchema = new mongoose.Schema({
+    title: {
         type: String,
         required: [true, "must have {PATH}"],
-        minlength: [3, "provide at least 3 chars"]
+        minlength: [5, "provide at least 5 chars"]
     },
-    age :{ 
+    price :{ 
         type: Number,
-        required: true
+        required: [true, "must have {PATH}"]
     },
-    eyeColor: {
+    description: {
         type: String,
-        default: "black"
+        required: [true, "must have {PATH}"],
+        minlength: [10, "provide at least 10 chars"]
     }
 }, {timestamps:true})
 
 // the model - this is what we use to make the actual queries to the DB
-const Pet = mongoose.model("Pet", PetSchema)
+const Product = mongoose.model("Product", ProductSchema)
 // console.log(Ninja);
 
 // export the model
-module.exports = Pet;
+module.exports = Product;

@@ -3,18 +3,18 @@ import axios from 'axios'
 
 const Form = ({ isReady, setIsReady }) => {
 
-    const [name, setName] = useState("")
-    const [age, setAge] = useState(0)
-    const [eyeColor, setEyeColor] = useState("fafafa")
+    const [title, setTitle] = useState("")
+    const [price, setPrice] = useState(0)
+    const [description, setDescription] = useState("")
 
-    const createPet = (e) => {
+    const createProduct = (e) => {
         e.preventDefault();
-        const newPet = {
-            name,
-            age,
-            eyeColor
+        const newProduct = {
+            title,
+            price,
+            description
         }
-        axios.post("http://localhost:8000/api/pets", newPet)
+        axios.post("http://localhost:8000/api/products", newProduct)
             .then(res => {
                 console.log(res.data)
                 setIsReady(!isReady);
@@ -24,11 +24,11 @@ const Form = ({ isReady, setIsReady }) => {
 
     return (
         <div>
-            <form onSubmit={createPet}>
-                name: <input onChange={(e => setName(e.target.value))} value={name} /> <br />
-                age: <input onChange={(e => setAge(e.target.value))} type="number" value={age} /> <br />
-                eyeColor <input onChange={(e => setEyeColor(e.target.value))} type="color" value={eyeColor} /> <br />
-                <button>submit</button>
+            <form onSubmit={createProduct}>
+                Title: <input onChange={(e => setTitle(e.target.value))} value={title} /> <br />
+                Price: <input onChange={(e => setPrice(e.target.value))} type="number" value={price} /> <br />
+                Description: <input onChange={(e => setDescription(e.target.value))} value={description} /> <br />
+                <button>Create</button>
             </form>
         </div>
     )

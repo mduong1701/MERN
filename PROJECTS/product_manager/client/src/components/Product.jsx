@@ -2,14 +2,14 @@
 // import axios from 'axios'
 // import { Link } from 'react-router-dom'
 
-const Pet = ({ pet }) => {
+const Product = ({ product }) => {
 
     return (
-        <div style={{ backgroundColor: pet.eyeColor }}>
+        <div>
             {/* {JSON.stringify(allPets)} */}
-            {pet.name}
+            {product.title}
         </div>
     )
 }
 
-export default Pet
+export default Product
