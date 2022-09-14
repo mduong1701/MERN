@@ -27,7 +27,7 @@ module.exports = {
                 // res.json({message: "created", newNote, status: 200})
                 res.json(newNote)
             })
-            .catch(err => res.json(err));
+            .catch(err => res.status(400).json(err));
     },
 
     // Read one

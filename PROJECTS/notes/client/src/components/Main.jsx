@@ -40,7 +40,7 @@ const Main = (props) => {
             {/* {JSON.stringify(notes)} */}
 
             {
-                notes.map((oneNote, index) => {
+                notes.map((oneNote) => {
                     return (
                         <div key={oneNote._id} className={noteStyle.note}>
                             <Link to={`/note/${oneNote._id}`}>
