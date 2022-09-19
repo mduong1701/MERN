@@ -28,8 +28,8 @@ const Form = (props) => {
                 onChange={ (event) => {
                     setChoice(event.target.value)}
                     }>
-                <option value=""></option>
-                <option value="people">people</option>
+                <option value="" disabled>Select something</option>
+                <option defaultValue={"people"} value="people">people</option>
                 <option value="planets">planets</option>
             </select>
             {/* id input */}
