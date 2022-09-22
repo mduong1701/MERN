@@ -1,0 +1,10 @@
+.spaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+.justifyRight {
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+}
