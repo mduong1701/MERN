@@ -8,3 +8,35 @@
     justify-content: space-between;
     width: 170px;
 }
+
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* padding-top: 600px; */
+}
+
+.parentContainer{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    height: 150px;
+}
+
+.mainContent {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.footer {
+    height: 100px;
+}
+
+html, body {
+    height: 100%;
+}

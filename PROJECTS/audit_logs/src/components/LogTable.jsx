@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-const rows = [
+const mockData = [
     {
         time: {
             time: "10:20:50 pm",
@@ -62,6 +62,16 @@ const rows = [
 ];
 
 export default function LogTable() {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch("https://app.harness.io/api/audit-logs?page=1")
+            .then(response => response.json())
+            .then(response => setData(response))
+            .catch(error => console.log(error))
+    }, [])
+
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -79,7 +89,7 @@ export default function LogTable() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map((row) => (
+                    {mockData.map((row) => (
                         <TableRow
                             key={row.name}
                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
